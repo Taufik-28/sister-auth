@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Sister Autentikasi OTP</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 400px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        label {
+            font-weight: 600;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            color: red;
+            text-align: center;
+            margin-top: 15px;
+        }
+        @media (max-width: 500px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>PENDAFTARAN AKUN</h2>
+    <form id="otp-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required placeholder="Masukkan username anda">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Masukkan email anda" required>
+
+        <label for="phone">Nomor Telepon:</label>
+        <input type="text" id="phone" placeholder="+628XXXXXXXXXX" required>
+
+        <label for="method">Pilih Metode Verifikasi:</label>
+        <select id="method" required>
+            <option value="sms">SMS</option>
+            <option value="email">Email</option>
+        </select>
+
+        <button type="submit">Daftar</button>
+    </form>
+
+    <div class="message" id="send-message"></div>
+
+    <h2 style="margin-top: 30px;">Verifikasi OTP</h2>
+    <form id="verify-form" style="display: none;">
+        <label for="otp">Masukkan OTP:</label>
+        <input type="text" id="otp" required placeholder="Masukkan OTP yang diterima">
+
+        <button type="submit">Verifikasi OTP</button>
+    </form>
+
+    <div class="message" id="verify-message"></div>
+</div>
+
+<script src="./app.js">
+  
+</script>
+
+</body>
+</html>
